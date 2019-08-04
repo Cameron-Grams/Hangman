@@ -1,0 +1,5 @@
+handling spaces for the empty string
+
+hangling multiple characters on guesses
+
+sequcence of test conditions in the main for boolean assignment

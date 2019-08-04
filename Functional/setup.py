@@ -5,7 +5,10 @@ target_word = random.choice(words)
 
 scaffold = [
         ["-----", "-----", "-----"],
-        ["-", "\u00AC"," "],
+        [ " ", " ", " " ],
+        ["--", "\u00AC"," "],
+        [ " ", " ", " " ],
+        [ " ", " ", " " ],
         [ " ", " ", " " ],
         [ " ", " ", " " ],
         [ " ", " ", " " ],
@@ -13,7 +16,7 @@ scaffold = [
         ]
 
 def start_game():
-    word_guessed = "_" * len(target_word)
-    return(target_word, word_guessed, scaffold)
+    guessed_word = "_" * len(target_word)
+    return(target_word, guessed_word, scaffold)
 
 
