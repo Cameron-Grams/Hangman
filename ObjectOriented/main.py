@@ -11,10 +11,13 @@ hangman = Game( target_word )
 like_to_play = input("Would you like to play Hangman?")
 like_to_play = like_to_play.upper()
 
-if like_to_play == ("YES" or "Y"):
+print( f"entered like to play: {like_to_play}" )
+
+if ( like_to_play == "Y" ) or ( like_to_play == "YES" ):
     play_game = True
 
 while play_game: 
     hangman.guess()
     hangman.show_word()
-    play_game = hangman.correct_word()
+    if hangman.correct_word():
+        play_game = False
