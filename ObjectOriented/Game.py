@@ -12,8 +12,14 @@ class Game( object ):
         print( f"And attempted: { '-'.join( self.attempted_guesses ) }" )
 
     def correct_word ( self ):
-        print( self.target_word == self.guessed_word )
         return( self.target_word == self.guessed_word )
+
+    def you_lose( self ):
+        print( f"You lose with { self.errors } incorrect guesses." )
+        print( f"You failed to guess { self.target_word }." )
+ 
+    def victory( self ):
+        print( f"Congratulations! You guessed { self.guessed_word } with only { self.errors } errors." )
     
     def guess( self ):
         guessed_letter = ( input( "Guess a letter: " ) ).upper()
@@ -25,10 +31,11 @@ class Game( object ):
 
         if not guessed_letter in self.target_word:
             self.errors += 1
-            print( self.errors )
         for letter_index in range( len( self.target_word ) ):
             if self.target_word[ letter_index ] == guessed_letter:
                 self.guess_array[ letter_index ] = guessed_letter
         self.guessed_word = "".join( self.guess_array )
-        print( self.guessed_word )
+
+        if self.errors == 6:
+            self.you_lose()
         return self.errors

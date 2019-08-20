@@ -25,4 +25,9 @@ while play_game:
     hangman.show_game_status()
 
     if hangman.correct_word():
+        hangman.victory()
+        play_game = False
+
+    if hangman.errors == 6:
+        hangman.you_lose()
         play_game = False
